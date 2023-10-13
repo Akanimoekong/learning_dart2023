@@ -1,5 +1,5 @@
 class Vehicle {
-  String? carName;
+  String? carName = "Benz";
   String? carModel;
 
   void displayVehicle(){
