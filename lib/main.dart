@@ -1,96 +1,69 @@
-import 'package:learning_dart/persons.dart';
+import 'package:flutter/material.dart';
 
-class Boy extends Person {
-  
-  @override
-  void displayInfo() {
-    var result = 3 + 4;
-    print(result);  }
-}
-
-class Girl extends Person {
-  @override
-  void displayInfo() {
-    var firstName = 'Sito';
-    var lastName = 'Samuel';
-    print('$firstName $lastName');  }
-}
-
-// void main() {
-//   Boy b = new Boy();
-//   Girl g = new Girl();
-//   b.displayInfo();
-//   print('\n');
-//   // g.displayInfo();
-//
-//   Student newStudent = new Student();
-//
-//   newStudent.setName('Adasi Katumu');
-//   print(newStudent.getName());
-//
-//   newStudent.setName('Samuel Umana');
-//   print(newStudent.getName());
-//
-//   // New Code
-//
-//   SUV newSUV = new SUV();
-//   newSUV.carName = 'Fore Runner';
-//   newSUV.carModel = '23JKL';
-//   newSUV.ownerName = 'Sito Samuel';
-//   newSUV.ownerAddress = 'Ikot Akpaden';
-//
-//   print('The owner of the car is ${newSUV.ownerName} and its address is ${newSUV.ownerAddress}');
-//
-//   var name = '';
-//   Function create;
-//
-//   // if(name == "Okon"){
-//   //   print('You are correct');
-//   // }else{
-//   //   print('you are Wrong');
-//   // }
-//
-//   (name != "Okon")? print('You are correct'): print('You are wrong');
-//
-//   int add(int a, int b){
-//     return a + b;
-//   }
-//
-//    int newAdd = add(15, 20);
-//
-//     int myAdd(int a, int b){
-//     return a + b;
-//   }
-//
-//
-//
-//
-// }
-
-/*
 void main() {
-  final sequence = generateSequence(3); // You can change the number of elements in the sequence here
-  final formattedSequence = sequence.join('-');
-  print(formattedSequence);
+  runApp(MyApp());
 }
 
-List<String> generateSequence(int count) {
-  final List<String> numbers = [];
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  for (int i = 0; i < count; i++) {
-    final number = generateRandomNumber();
-    numbers.add(number.toString());
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange)),
+      home: SplashScreen()
+    );
   }
-
-  return numbers;
 }
 
-int generateRandomNumber() {
-  final random = Random();
-  return random.nextInt(1000); // Generates a random number between 0 and 999
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey.shade900,
+      body: SafeArea(
+        child: Container(
+          decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/learning_background.jpg'), fit: BoxFit.fill)),
+          padding: EdgeInsets.only(bottom: 16),
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                margin: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white70, width: 1.5),
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.all(Radius.circular(16))),
+                child: Icon(
+                  Icons.safety_check_outlined,
+                  color: Colors.white,
+                  size: 100,
+                ),
+              ),
+              SizedBox(
+                height: 200,
+              ),
+              Text(
+                'Ritilo',
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+              Text(
+                'Ipsum Lorem ipsum dolor\nsit amet, consectetur',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white38, fontSize: 15),
+              ),
+            ],
+          ),
+        ),),
+    );
+  }
 }
-*/
-
-
-
 
