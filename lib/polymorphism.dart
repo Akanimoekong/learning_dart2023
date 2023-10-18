@@ -38,6 +38,8 @@ class Car{
   }
 }
 
+
+
 class Honda extends Car{
 
 }
@@ -50,11 +52,15 @@ class Tesla extends Car{
 }
 
 void main(){
-  Honda honda = Honda();
+
+/*  Honda honda = Honda();
   Tesla tesla = Tesla();
 
   honda.power();
-  tesla.power();
+  tesla.power();*/
 
-  print('${initialReg}013');
+  print('013');
+
+
 }
+
